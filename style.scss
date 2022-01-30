@@ -3,7 +3,7 @@
 body {
     width: 100%;
     height: 100%;
-    background-color: #000;
+    background-color: #111;
     overflow: hidden;
 }
 
@@ -61,6 +61,16 @@ body {
             background-color: var(--item-bg);
         }
     }
+}
+
+.bg {
+    max-width: 800px;
+    height: auto;
+    position: absolute;
+    object-fit: contain;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @keyframes menuAnimation {
