@@ -82,7 +82,6 @@ class ContextMenu {
     }
 }
 
-
 const menuItems = [
     { content: `Copy`, events: { click: e => console.log(e) } },
     { content: `Paste` },
@@ -93,11 +92,3 @@ const menuItems = [
 
 const menu = new ContextMenu({ target: ".target", menuItems });
 menu.init();
-
-function removeMessage() {
-    const message = document.querySelector(".right-click");
-    if (message) message.remove();
-}
-
-window.addEventListener("click", removeMessage);
-window.addEventListener("contextmenu", removeMessage);
