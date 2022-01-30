@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+.target {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  overflow: hidden;
+}
+
+/* Context Menu */
+.contextMenu {
+  --menu-border: rgba(255, 255, 255, 0.08);
+  --menu-bg: linear-gradient(45deg, rgba(20, 20, 20, 0.2) 0%, rgba(17, 17, 17, 0.7) 100%);
+  --item-color: #fff;
+  --item-bg: rgba(255, 255, 255, 0.1);
+  height: 0;
+  background: var(--menu-bg);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  position: fixed;
+  top: var(--top);
+  left: var(--left);
+  -webkit-animation: menuAnimation 0.4s 0s both;
+          animation: menuAnimation 0.4s 0s both;
+  list-style: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 99;
+  min-width: 150px;
+  -webkit-box-shadow: 0 0 0 1px var(--menu-border), 0 2px 2px black;
+          box-shadow: 0 0 0 1px var(--menu-border), 0 2px 2px black;
+}
+
+.contextMenu-item {
+  padding: 4px;
+}
+
+.contextMenu-item[data-divider="top"] {
+  border-top: 1px solid;
+}
+
+.contextMenu-item[data-divider="bottom"] {
+  border-bottom: 1px solid;
+}
+
+.contextMenu-item[data-divider] {
+  border-color: var(--item-bg);
+}
+
+.contextMenu-button {
+  width: 100%;
+  color: var(--item-color);
+  background: 0;
+  border: 0;
+  white-space: nowrap;
+  border-radius: 4px;
+  padding: 6px 24px 6px 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: menuItemAnimation 0.2s 0s both;
+          animation: menuItemAnimation 0.2s 0s both;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+}
+
+.contextMenu-button:hover {
+  background-color: var(--item-bg);
+}
+
+@-webkit-keyframes menuAnimation {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    height: var(--height);
+    opacity: 1;
+    border-radius: 8px;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes menuAnimation {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    height: var(--height);
+    opacity: 1;
+    border-radius: 8px;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes menuItemAnimation {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes menuItemAnimation {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+/*# sourceMappingURL=style.css.map */
